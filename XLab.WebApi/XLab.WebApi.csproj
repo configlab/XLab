@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>e34ed793-36d3-4860-b320-9fc31c51790c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspectCore.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.2" />
+    <PackageReference Include="Scrutor" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XLab.Entity\XLab.Entity.csproj" />
+    <ProjectReference Include="..\XLab.Infrastructure\XLab.Infrastructure.csproj" />
+    <ProjectReference Include="..\XLab.Service\XLab.Service.csproj" />
+    <ProjectReference Include="..\XLab.WebApi.Interceptor\XLab.WebApi.Interceptor.csproj" />
+  </ItemGroup>
+
+
+</Project>
