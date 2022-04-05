@@ -11,6 +11,10 @@ using System.Text;
 
 namespace XLab.WebApi.Interceptor.Filters
 {
+    /// <summary>
+    /// 作者: http://config.net.cn
+    /// 创建时间:2022-4-5
+    /// </summary>
     public class XLabAthenticationAttr: Attribute, IAuthorizationFilter
     {
         public void OnAuthorization(AuthorizationFilterContext context)

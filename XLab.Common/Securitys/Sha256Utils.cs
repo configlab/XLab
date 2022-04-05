@@ -5,6 +5,10 @@ using System.Text;
 
 namespace XLab.Common.Securitys
 {
+    /// <summary>
+    /// 作者: http://config.net.cn
+    /// 创建时间:2022-4-5
+    /// </summary>
     public class Sha256Utils
     {
         public static string HashString(string input)

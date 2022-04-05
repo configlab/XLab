@@ -7,6 +7,10 @@ using XLab.Infrastructure.Logs;
 
 namespace XLab.Infrastructure.Cache
 {
+    /// <summary>
+    /// 作者: http://config.net.cn
+    /// 创建时间:2022-4-5
+    /// </summary>
     public class RedisManager: IRedisManager
     {
         private readonly IConnectionMultiplexer _connMultiplexer;

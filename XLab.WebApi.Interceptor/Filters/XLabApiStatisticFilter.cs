@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace XLab.WebApi.Interceptor.Filters
 {
+    /// <summary>
+    /// 作者: http://config.net.cn
+    /// 创建时间:2022-4-5
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
     public class XLabApiStatisticFilter: ActionFilterAttribute
     {

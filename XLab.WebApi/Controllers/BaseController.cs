@@ -9,6 +9,10 @@ using XLab.WebApi.Interceptor.Filters;
 
 namespace XLab.WebApi.Controllers
 {
+    /// <summary>
+    /// 作者: http://config.net.cn
+    /// 创建时间:2022-4-5
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [XLabAthenticationAttr]//[Authorize]

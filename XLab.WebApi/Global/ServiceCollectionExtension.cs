@@ -10,6 +10,10 @@ using XLab.Service.Demo;
 
 namespace XLab.WebApi.Global
 {
+    /// <summary>
+    /// 作者: http://config.net.cn
+    /// 创建时间:2022-4-5
+    /// </summary>
     public static class ServiceCollectionExtension
     {
         public static void ConfigureServiceCollection(this IServiceCollection services, AppSetting settings)
