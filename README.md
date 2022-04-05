@@ -1,5 +1,5 @@
-# XLab
-XLab
+# XLab 一个旨在快速验证一些技术方案和设计理念的实验项目，因此它不会直接可以用来提供某种服务，只能在本地打开调试方便技术方案验证。   
+-------------------------------------------------------------
 [XLab中的测试用例中用到的数据]
 -----BEGIN PUBLIC KEY-----
 MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEU/OIZevTqmXHmGMeIE4q/4w4X6WZ
