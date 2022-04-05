@@ -10,3 +10,11 @@ MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEU/OIZevTqmXHmGMeIE4q/4w4X6WZuexpNEifUeGjUWaQ
 
 jwttoken(ecc)
 eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDkxMjI0NDAsImV4cCI6NDI0MTEyMjQ0MCwiYXVkIjoiT3BlbkFQSSIsImlzcyI6ImNvbmZpZy5uZXQuY24iLCJzdWIiOiJYTGFiIiwianRpIjoiT0dGbVkyRTVObUV0WlRNM1pDMDBaR1V4TFRsbU1ESXRZV0ptWWpKa01UVmtNakUyIn0.zcxGJbDoH2B7uz5QetRV-8i78EFMDm11ORKqsYa90REpMrDAYkYdtjvtsju4-0OyoDh_5nAfz91cgjC88EPzZg
+
+[测试用例]
+1)测试ecc类型的jwt token.
+  post:https://localhost:44337/api/demo/sign
+  post body: {"UserId":1001,"Tel":"15200010002","Timespan":"2022-04-04T12:37:50.14127+08:00"}
+  header:
+         Authorization:Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDkxMjI0NDAsImV4cCI6NDI0MTEyMjQ0MCwiYXVkIjoiT3BlbkFQSSIsImlzcyI6ImNvbmZpZy5uZXQuY24iLCJzdWIiOiJYTGFiIiwianRpIjoiT0dGbVkyRTVObUV0WlRNM1pDMDBaR1V4TFRsbU1ESXRZV0ptWWpKa01UVmtNakUyIn0.zcxGJbDoH2B7uz5QetRV-8i78EFMDm11ORKqsYa90REpMrDAYkYdtjvtsju4-0OyoDh_5nAfz91cgjC88EPzZg
+         AuthSchema: OpenAPI
