@@ -5,7 +5,7 @@ using System.Text;
 
 namespace XLab.Entity.Demo
 {
-    public class RequestData
+    public class SignRequestModel
     {
         public int UserId { get; set; }
         public string Tel { get; set; }

@@ -10,7 +10,7 @@ namespace XLab.Service.Demo
 {
     public class DataSignService:IDataSignService
     {
-        public string GetSign(RequestData data)
+        public string GetSign(SignRequestModel data)
         {
             if (data == null)
                 return string.Empty;

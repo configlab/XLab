@@ -9,6 +9,6 @@ namespace XLab.Service.Demo
     [Cached]
     public interface IDataSignService
     {
-        public string GetSign(RequestData data);
+        public string GetSign(SignRequestModel data);
     }
 }
