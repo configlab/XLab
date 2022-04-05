@@ -65,9 +65,9 @@ namespace XLab.WebApi.Controllers
                     new Claim(ClaimTypes.DateOfBirth, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),//token生效时间
                     new Claim(ClaimTypes.Expiration, $"{new DateTimeOffset(dTimeExpire).ToUnixTimeSeconds()}")//到期时间，按秒数计算
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSetting.Security.Authentication.DefaultJwt.SecurityKey));//key至少是16位
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSetting.Security.Jwt.Default.SecurityKey));//key至少是16位
             var token = new JwtSecurityToken(
-            issuer: _appSetting.Security.Authentication.DefaultJwt.Issuer,
+            issuer: _appSetting.Security.Jwt.Default.Issuer,
             audience: $"audience_user1_random0001",
             claims: claims,
             notBefore: DateTime.Now,

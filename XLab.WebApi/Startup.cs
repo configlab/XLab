@@ -20,6 +20,8 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
+using static XLab.WebApi.Interceptor.Filters.XLabAthenticationAttr;
+using XLab.Common.Securitys;
 
 namespace XLab.WebApi
 {
@@ -41,7 +43,7 @@ namespace XLab.WebApi
         {
             services.AddControllers(
                   options => {
-                      options.Filters.Add(new ApiStatisticFilter());//xlab:filter
+                      options.Filters.Add(new XLabApiStatisticFilter());//xlab:filter
                   }
                 );
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -61,10 +63,23 @@ namespace XLab.WebApi
                         return valideAudience;
                     },
                     ValidateIssuer = true,//是否验证Issuer
-                    ValidIssuer = AppSettings.Security.Authentication.DefaultJwt.Issuer,//Issuer，这两项和前面签发jwt的设置一致
+                    ValidIssuer = AppSettings.Security.Jwt.Default.Issuer,//Issuer，这两项和前面签发jwt的设置一致
                     ValidateIssuerSigningKey = true,//是否验证SecurityKey
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSettings.Security.Authentication.DefaultJwt.SecurityKey))//拿到SecurityKey
-                });
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSettings.Security.Jwt.Default.SecurityKey))//拿到SecurityKey
+                })
+                 .AddJwtBearer(AuthSchema.OpenAPI, options =>
+                 {
+                     options.TokenValidationParameters = new TokenValidationParameters()
+                     {
+                         ValidateLifetime =false,
+                         ValidateAudience = false,
+                         ValidateIssuer = true,
+                         ValidIssuer = AppSettings.Security.Jwt.OpenAPI.Issuer,
+                         ValidAudience = "config.net.cn",
+                         ValidateIssuerSigningKey = true,
+                         IssuerSigningKey = new ECDsaSecurityKey(EccUtils.LoadPublicKey(AppSettings.Security.Jwt.OpenAPI.SecurityKey))
+                     };
+                 });
 
             services.ConfigureServiceCollection(AppSettings);//xlab:reg
             services.Configure<KestrelServerOptions>(x => x.AllowSynchronousIO = true)

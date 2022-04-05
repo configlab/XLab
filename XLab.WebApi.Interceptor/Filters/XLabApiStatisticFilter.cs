@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 namespace XLab.WebApi.Interceptor.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
-    public class ApiStatisticFilter: ActionFilterAttribute
+    public class XLabApiStatisticFilter: ActionFilterAttribute
     {
         public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             //return base.OnActionExecutionAsync(context, next);
-            ILogger<ApiStatisticFilter> _logger = context.HttpContext.RequestServices.GetService<ILogger<ApiStatisticFilter>>();
+            ILogger<XLabApiStatisticFilter> _logger = context.HttpContext.RequestServices.GetService<ILogger<XLabApiStatisticFilter>>();
             //操作Request.Body之前加上EnableBuffering即可
             context.HttpContext.Request.EnableBuffering();
             var request = context.HttpContext.Request;

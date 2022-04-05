@@ -37,11 +37,12 @@ namespace XLab.Infrastructure.Configs
     /// </summary>
     public class SecuritySetting
     {
-        public AuthenticationSetting Authentication { get; set; }
+        public JwtSetting Jwt { get; set; }
     }
-    public class AuthenticationSetting
+    public class JwtSetting
     {
-        public JwtTokenSetting DefaultJwt { get; set; }
+        public JwtTokenSetting Default { get; set; }
+        public JwtTokenSetting OpenAPI { get; set; }
     }
     public class JwtTokenSetting
     {
